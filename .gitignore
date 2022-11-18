@@ -1,2 +1,5 @@
 /node_modules
 .env
+keys/rsa.key
+
+keys/rsa.key.pub

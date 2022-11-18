@@ -1,0 +1,30 @@
+[
+  {
+    "distance": 100,
+    "imageUrl": "https://cdn.pixabay.com/photo/2019/08/26/08/12/street-4431082_960_720.jpg",
+    "name": "Mercado de Productores",
+    "blurHash": "MDB{+D?b0#OZ-p~V?aJ.NwxCE4%M-:R+M{",
+    "numberOfStalls": 150000000
+  },
+  {
+    "distance": 240,
+    "imageUrl": "https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944_960_720.jpg",
+    "name": "Mercado Santa Maria",
+    "blurHash": "M7Gkm^0eK7,pS}8y_N4.%2t5RS9FXToHRi",
+    "numberOfStalls": 125
+  },
+  {
+    "distance": 200,
+    "imageUrl": "https://cdn.pixabay.com/photo/2014/08/26/15/22/fish-market-428058_960_720.jpg",
+    "name": "Mercado Villa Mar",
+    "blurHash": "e7BWe~~qM{4nD%00D%t7-;%MM{of-;%MIUofWBM{D%of9FD%-;?bt7",
+    "numberOfStalls": 53
+  },
+  {
+    "distance": 0,
+    "imageUrl": "https://cdn.pixabay.com/photo/2021/04/25/14/51/background-6206628_960_720.png",
+    "name": "Mercado Virtual",
+    "blurHash": "e86@sh~TNM0p0oococa#WCWW0Q4@xC^c^bNIR-j[s,s:==${WEItNL",
+    "numberOfStalls": 1024
+  }
+]
