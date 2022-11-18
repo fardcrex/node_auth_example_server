@@ -3,16 +3,16 @@ import UserToken from "../models/UserToken.js";
 import jwt from "jsonwebtoken";
 import verifyRefreshToken from "../utils/verifyRefreshToken.js";
 import { refreshTokenBodyValidation } from "../utils/validationSchema.js";
-import fs from "fs";
-import path from "path";
+/* import fs from "fs";
+import path from "path"; */
 
 const router = Router();
 
-const privateKey = fs.readFileSync(
+/* const privateKey = fs.readFileSync(
   path.join(process.cwd(), "keys", "rsa.key"),
   "utf8"
 );
-
+ */
 // get new access token
 router.post("/", async (req, res) => {
   console.log("== refresh token ==");
@@ -25,6 +25,10 @@ router.post("/", async (req, res) => {
   verifyRefreshToken(req.body.refreshToken)
     .then(({ tokenDetails }) => {
       const payload = { _id: tokenDetails._id, roles: tokenDetails.roles };
+      const privateKey = Buffer.from(
+        process.env.ACCESS_TOKEN_PRIVATE_KEY,
+        "base64"
+      ).toString("ascii");
       const accessToken = jwt.sign(payload, privateKey, {
         expiresIn: "30s",
         algorithm: "RS256",

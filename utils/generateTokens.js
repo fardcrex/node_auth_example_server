@@ -3,16 +3,21 @@ import UserToken from "../models/UserToken.js";
 import fs from "fs";
 import path from "path";
 
-const privateKey = fs.readFileSync(
+/* const privateKey = fs.readFileSync(
   path.join(process.cwd(), "keys", "rsa.key"),
   "utf8"
 );
 const publicKey = fs.readFileSync(
   path.join(process.cwd(), "keys", "rsa.key.pub"),
   "utf8"
-);
+); */
 const generateTokens = async (user) => {
   try {
+    const privateKey = Buffer.from(
+      process.env.ACCESS_TOKEN_PRIVATE_KEY,
+      "base64"
+    ).toString("ascii");
+
     const payload = { _id: user._id, roles: user.roles };
     const accessToken = jwt.sign(payload, privateKey, {
       algorithm: "RS256",

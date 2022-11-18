@@ -15,6 +15,10 @@ const auth = async (req, res, next) => {
   }
 
   try {
+    const publicKey = Buffer.from(
+      process.env.ACCESS_TOKEN_PUBLIC_KEY,
+      "base64"
+    ).toString("ascii");
     const tokenDetails = jwt.verify(token, publicKey, { algorithm: "RS256" });
     req.user = tokenDetails;
     next();
