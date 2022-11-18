@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 import fs from "fs";
 import path from "path";
-const publicKey = fs.readFileSync(
+/* const publicKey = fs.readFileSync(
   path.join(process.cwd(), "keys", "rsa.key.pub"),
   "utf8"
-);
+); */
 const auth = async (req, res, next) => {
   const token = req.header("authorization");
   if (!token) {
