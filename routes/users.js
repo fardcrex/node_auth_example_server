@@ -20,7 +20,7 @@ const hashCode = function (s) {
 router.get("/mercados", auth, async (req, res) => {
   const marketsDb = await Market.find({});
   console.log({
-    getMercadosFrom: req.rawHeaders[req.rawHeaders.length - 1],
+    getMercadosFrom: req.rawHeaders,
     at: Date.now().toLocaleString(),
   });
   const markets = marketsDb.map((data) => {
